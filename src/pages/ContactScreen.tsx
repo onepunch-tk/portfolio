@@ -1,10 +1,14 @@
 import { useSelectMenu } from "@/hooks/useSelectMenu.ts";
+import { ContentWrapper } from "@components/ContentWrapper.tsx";
+import { ContactWrapper } from "@components/ContactWrapper.tsx";
 
 export function ContactScreen() {
   useSelectMenu();
   return (
-    <section className="grow">
-      <h1>contact</h1>
+    <section className="h-full grow">
+      <ContentWrapper>
+        <ContactWrapper />
+      </ContentWrapper>
     </section>
   );
 }
