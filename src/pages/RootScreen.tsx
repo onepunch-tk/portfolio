@@ -35,9 +35,10 @@ export function RootScreen() {
     >
       <div
         className={cls(
-          "z-10 flex h-5/6 w-5/6 rounded-lg bg-white shadow-lg shadow-black",
+          "z-10 flex h-5/6 w-5/6 rounded-lg bg-white shadow-lg shadow-black ",
           screenVariants({ outletWrapper: "default" }),
-          screenVariants({ outletWrapper: "lg" })
+          screenVariants({ outletWrapper: "lg" }),
+          { "bg-neutral-300": !isHome }
         )}
       >
         {!isHome && isLarge ? <InHeader /> : null}
