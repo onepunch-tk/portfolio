@@ -2,6 +2,7 @@ import { MenuType, WithClassNameType } from "@/types/props.ts";
 import { memo } from "react";
 import { cls } from "@utils/helpers.ts";
 import { Link } from "react-router-dom";
+import { useMenuState } from "@services/state/store/useMenuState.ts";
 
 type TextMenuListProps = {
   menuList: MenuType[];
@@ -31,6 +32,7 @@ function Ellipsis() {
 export const TextMenuList = memo(function TextMenuList({
   menuList,
 }: TextMenuListProps) {
+  const currentMenu = useMenuState((state) => state.currentMenu);
   return (
     <ul>
       <Edge className="flex-col" />
@@ -38,7 +40,10 @@ export const TextMenuList = memo(function TextMenuList({
         <li key={index} className="flex flex-col items-center justify-center">
           <Link
             to={menu.url}
-            className="cursor-pointer transition-[color] duration-300 hover:text-white"
+            className={cls(
+              "cursor-pointer transition-[color] duration-300 hover:text-white",
+              { "text-white": currentMenu?.name === menu.name }
+            )}
           >
             <h2 className="my-1.5 text-lg font-semibold">{menu.name}</h2>
           </Link>

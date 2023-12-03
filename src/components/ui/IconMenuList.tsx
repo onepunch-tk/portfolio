@@ -5,10 +5,11 @@ import {
   faEllipsisVertical,
 } from "@fortawesome/free-solid-svg-icons";
 import { memo } from "react";
-import { useResponsiveBreakpoint } from "@/hooks/useNavbarPosition.ts";
+import { useResponsiveBreakpoint } from "@/hooks/useResponsiveBreakpoint.ts";
 import { MenuType } from "@/types/props.ts";
 import { tv } from "tailwind-variants";
 import { cls } from "@utils/helpers.ts";
+import { useMenuState } from "@services/state/store/useMenuState.ts";
 
 type IconMenuListProps = {
   menuList: MenuType[];
@@ -27,6 +28,7 @@ export const IconMenuList = memo(function IconMenuList({
   menuList,
 }: IconMenuListProps) {
   const isLarge = useResponsiveBreakpoint();
+  const currentMenu = useMenuState((state) => state.currentMenu);
   return (
     <ul className="flex justify-center lg:flex-col">
       {menuList.map((menu, index) => (
@@ -39,7 +41,10 @@ export const IconMenuList = memo(function IconMenuList({
           )}
         >
           <Link
-            className="flex cursor-pointer flex-col transition-[color] duration-300 hover:text-white"
+            className={cls(
+              "flex cursor-pointer flex-col transition-[color] duration-300 hover:text-white",
+              { "text-white": currentMenu?.name === menu.name }
+            )}
             to={menu.url}
           >
             <FontAwesomeIcon icon={menu.icon} />
