@@ -49,7 +49,7 @@ export function HomeScreen() {
         </article>
         <Link
           to={`/${ROOT_ROUTES.ABOUT_ME}`}
-          className="mt-10 rounded-3xl bg-amber-400 p-3 text-white transition-[transform] duration-300 hover:scale-110"
+          className="mt-10 rounded-3xl bg-amber-400 p-3 font-semibold text-white transition-[transform] duration-300 hover:scale-110"
         >
           MORE ABOUT ME
         </Link>
