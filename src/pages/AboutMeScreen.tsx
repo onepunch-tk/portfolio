@@ -5,7 +5,7 @@ import { AboutmeWrapper } from "@components/AboutmeWrapper.tsx";
 export function AboutMeScreen() {
   useSelectMenu();
   return (
-    <section className="h-full">
+    <section className="h-full grow">
       <ContentWrapper>
         <AboutmeWrapper />
       </ContentWrapper>

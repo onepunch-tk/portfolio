@@ -9,7 +9,7 @@ import { OutHeader } from "@components/OutHeader.tsx";
 const screenVariants = tv({
   variants: {
     outletWrapper: {
-      default: " flex-col-reverse",
+      default: " flex-col",
       lg: " lg:flex-row lg:justify-between",
     },
     iconNavWrap: {
@@ -35,7 +35,7 @@ export function RootScreen() {
     >
       <div
         className={cls(
-          "flex h-5/6 w-5/6 rounded-lg bg-white shadow-lg shadow-black ",
+          "relative flex h-5/6 w-5/6 rounded-lg bg-white shadow-lg shadow-black",
           screenVariants({ outletWrapper: "default" }),
           screenVariants({ outletWrapper: "lg" }),
           { "bg-neutral-300": !isHome },

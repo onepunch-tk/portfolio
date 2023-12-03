@@ -14,7 +14,7 @@ import { SkillCardLg } from "@components/ui/SkillCardLg.tsx";
 export function AboutmeWrapper() {
   const isLarge = useResponsiveBreakpoint();
   return (
-    <section className="flex h-full w-full flex-col items-center justify-start overflow-scroll p-3 md:overflow-auto lg:overflow-auto">
+    <section className="flex w-full flex-col items-center justify-start overflow-scroll p-3 md:overflow-auto lg:overflow-auto">
       <div className="flex w-full flex-col justify-start space-y-2">
         <div className="flex items-end space-x-3">
           <label className="font-light lg:text-xl">I'm</label>
@@ -22,7 +22,7 @@ export function AboutmeWrapper() {
         </div>
         <h3 className="text-3xl font-thin lg:py-3">Web / App Developer</h3>
       </div>
-      <article className="py-4">
+      <article className="py-4 lg:pr-10">
         <span className="text-sm">
           클라이언트의 요구사항을 프로젝트에 효과적으로 통합하며, 문제 해결
           능력이 탁월합니다. 새로운 기술을 검증하고 도입하는 것을 즐기며, 이를

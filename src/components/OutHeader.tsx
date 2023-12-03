@@ -7,11 +7,11 @@ import { tv } from "tailwind-variants";
 const header = tv({
   variants: {
     iconNavWrap: {
-      lg: " lg:pr-3",
+      lg: " lg:right-6 lg:top-0 lg:bottom-0 lg:my-auto lg:w-0",
     },
     iconNav: {
       default: " w-full",
-      lg: " lg:top-auto lg:w-auto lg:rounded-3xl px-2.5",
+      lg: "  lg:w-auto lg:rounded-3xl px-2.5",
     },
   },
 });
@@ -20,7 +20,7 @@ export function OutHeader() {
   return (
     <div
       className={cls(
-        "flex items-center justify-center",
+        "absolute flex w-full items-center justify-center",
         header({ iconNavWrap: "lg" })
       )}
     >
