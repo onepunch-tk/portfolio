@@ -30,7 +30,7 @@ export const IconMenuList = memo(function IconMenuList({
   const isLarge = useResponsiveBreakpoint();
   const currentMenu = useMenuState((state) => state.currentMenu);
   return (
-    <ul className="flex justify-center lg:flex-col">
+    <ul className="flex justify-center  lg:flex-col">
       {menuList.map((menu, index) => (
         <li
           key={index}

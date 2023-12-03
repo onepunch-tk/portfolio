@@ -26,7 +26,7 @@ export function OutHeader() {
     >
       <Navbar
         className={cls(
-          "z-50 w-full bg-amber-400 py-4",
+          "z-50 w-full rounded-t-lg bg-amber-400 py-4",
           header({ iconNav: "default" }),
           header({ iconNav: "lg" })
         )}
