@@ -33,7 +33,7 @@
         background-size: cover;
         background-image:
                 linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                url('../assets/myImg.JPG');
+                url('../assets/myImg.jpg');
     }
 
     @keyframes fadeUp {
