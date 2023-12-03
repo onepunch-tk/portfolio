@@ -1,20 +1,20 @@
-import { RefObject, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export const useNavbarPosition = (outletRef: RefObject<HTMLDivElement>) => {
-  const [navbarPosition, setNavbarPosition] = useState(0);
+export const useResponsiveBreakpoint = () => {
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
   useEffect(() => {
-    const updateNavbarPosition = () => {
-      if (outletRef.current) {
-        const outletWidth = outletRef.current.offsetLeft;
-        setNavbarPosition(outletWidth + 20);
+    const updateResponsiveBreakpoint = () => {
+      const body = document.querySelector("body");
+      if (body) {
+        setIsLargeScreen(body.offsetWidth >= 1024);
       }
     };
 
-    window.addEventListener("resize", updateNavbarPosition);
-    updateNavbarPosition(); // 초기 위치 설정
-
-    return () => window.removeEventListener("resize", updateNavbarPosition);
+    window.addEventListener("resize", updateResponsiveBreakpoint);
+    updateResponsiveBreakpoint();
+    return () =>
+      window.removeEventListener("resize", updateResponsiveBreakpoint);
   }, []);
 
-  return navbarPosition;
+  return isLargeScreen;
 };

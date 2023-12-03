@@ -1,6 +1,6 @@
 export function ContactScreen() {
   return (
-    <section>
+    <section className="grow">
       <h1>contact</h1>
     </section>
   );

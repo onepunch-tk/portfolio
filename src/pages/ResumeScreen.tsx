@@ -1,6 +1,6 @@
 export function ResumeScreen() {
   return (
-    <section>
+    <section className="grow">
       <h1>resume</h1>
     </section>
   );

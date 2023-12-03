@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+    body {
+        color:#171717;
+    }
     .main-bg-default {
         height: 100svh;
         background-position: center;
