@@ -42,7 +42,7 @@ export function RootScreen() {
       >
         {!isHome && isLarge ? <InHeader /> : null}
         <Outlet />
-        <OutHeader />
+        {!isHome ? <OutHeader /> : null}
       </div>
       {isHome ? (
         <div className="muted-mustard-color absolute bottom-0 h-1/2 w-screen"></div>
